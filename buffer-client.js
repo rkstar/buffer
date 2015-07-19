@@ -6,7 +6,7 @@ BufferApp.requestCredential = function(options, credentialRequestCompleteCallbac
     options = {}
   }
 
-  var config = ServiceConfiguration.configurations.findOne({service: 'bufferapp'})
+  var config = ServiceConfiguration.configurations.findOne({service: 'buffer'})
   if( !config ){
     credentialRequestCompleteCallback && credentialRequestCompleteCallback(new ServiceConfiguration.ConfigError('BufferApp not configured'))
     return
@@ -17,15 +17,15 @@ BufferApp.requestCredential = function(options, credentialRequestCompleteCallbac
   // a credentialToken parameter to the url and the callback url that we'll be returned
   // to by oauth provider
 
-  var loginStyle = OAuth._loginStyle('bufferapp', config, options)
+  var loginStyle = OAuth._loginStyle('buffer', config, options)
   var loginUrl = 'https://bufferapp.com/oauth2/authorize'+
     '?response_type=code'+
     '&client_id='+config.clientId+
-    '&redirect_uri='+OAuth._redirectUri('bufferapp', config)+
+    '&redirect_uri='+OAuth._redirectUri('buffer', config)+
     '&state='+OAuth._stateParam(loginStyle, credentialToken)
 
   OAuth.launchLogin({
-    loginService: 'bufferapp',
+    loginService: 'buffer',
     loginStyle: loginStyle,
     loginUrl: loginUrl,
     credentialRequestCompleteCallback: credentialRequestCompleteCallback,

@@ -1,6 +1,6 @@
 var OAuth = Package.oauth.OAuth
 
-OAuth.registerService('bufferapp', 2, null, function(query){
+OAuth.registerService('buffer', 2, null, function(query){
   var response = app.getResponseData(query),
     user = app.getUserData(response.access_token),
     profiles = app.getProfileData(response.access_token),
@@ -35,7 +35,7 @@ OAuth.registerService('bufferapp', 2, null, function(query){
 
 var app = {
   getResponseData: function(query){
-    var config = ServiceConfiguration.configurations.findOne({service: 'bufferapp'})
+    var config = ServiceConfiguration.configurations.findOne({service: 'buffer'})
     if( !config ){
       throw new ServiceConfiguration.ConfigError('BufferApp not configured')
     }
@@ -45,7 +45,7 @@ var app = {
         grant_type: 'authorization_code',
         client_id: config.clientId,
         client_secret: config.clientSecret,
-        redirect_uri: OAuth._redirectUri('bufferapp', config),
+        redirect_uri: OAuth._redirectUri('buffer', config),
         code: query.code
       }}).data
     } catch(err){
