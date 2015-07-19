@@ -1,6 +1,6 @@
 ## rkstar:buffer
 
-An OAuth2 wrapper for the [Buffer](http://bufferapp.com) in [Meteor](http://meteor.com) API
+An OAuth2 wrapper for the [Buffer](http://bufferapp.com) API
 
 ### Package Dependencies
 
