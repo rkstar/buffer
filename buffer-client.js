@@ -1,5 +1,5 @@
-// request BufferApp creds for the user
-BufferApp.requestCredential = function(options, credentialRequestCompleteCallback){
+// request Buffer creds for the user
+Buffer.requestCredential = function(options, credentialRequestCompleteCallback){
   // support both( options, callback) and (callback)
   if( !credentialRequestCompleteCallback && (typeof options === 'function') ){
     credentialRequestCompleteCallback = options
@@ -8,7 +8,7 @@ BufferApp.requestCredential = function(options, credentialRequestCompleteCallbac
 
   var config = ServiceConfiguration.configurations.findOne({service: 'buffer'})
   if( !config ){
-    credentialRequestCompleteCallback && credentialRequestCompleteCallback(new ServiceConfiguration.ConfigError('BufferApp not configured'))
+    credentialRequestCompleteCallback && credentialRequestCompleteCallback(new ServiceConfiguration.ConfigError('Buffer not configured'))
     return
   }
 

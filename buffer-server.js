@@ -37,7 +37,7 @@ var app = {
   getResponseData: function(query){
     var config = ServiceConfiguration.configurations.findOne({service: 'buffer'})
     if( !config ){
-      throw new ServiceConfiguration.ConfigError('BufferApp not configured')
+      throw new ServiceConfiguration.ConfigError('Buffer not configured')
     }
 
     try {
@@ -49,15 +49,15 @@ var app = {
         code: query.code
       }}).data
     } catch(err){
-      throw new Error('Failed to complete OAuth handshake with BufferApp. '+err.message)
+      throw new Error('Failed to complete OAuth handshake with Buffer. '+err.message)
     }
 
     if( !data ){
-      throw new Error('Failed to complete OAuth handshake with BufferApp. '+err.message)
+      throw new Error('Failed to complete OAuth handshake with Buffer. '+err.message)
     }
 
     if( !data.access_token ){
-      throw new Error('Failed to complete OAuth handshake with BufferApp -- can\'t find access token in HTTP response '+response.content)
+      throw new Error('Failed to complete OAuth handshake with Buffer -- can\'t find access token in HTTP response '+response.content)
     }
 
     return data
@@ -80,6 +80,6 @@ var app = {
   }
 }
 
-BufferApp.retrieveCredential = function(credentialToken, credentialSecret){
+Buffer.retrieveCredential = function(credentialToken, credentialSecret){
   return OAuth.retrieveCredential(credentialToken, credentialSecret)
 }
