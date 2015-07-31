@@ -21,7 +21,7 @@ Package.onUse(function(api) {
   api.use('random', 'client')
   api.use('service-configuration')
 
-  api.export('Buffer')
+  api.export('BufferService')
 
   api.addFiles('buffer-common.js')
   api.addFiles('buffer-client.js', 'client')
