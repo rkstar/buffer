@@ -20,7 +20,10 @@ OAuth.registerService('buffer', 2, null, function(query){
     ]
 
   profiles.map(function(profile){
-    serviceData.services[profile.service] = _.pick(profile, whitelist)
+    if( !serviceData.services[profile.service] ){
+      serviceData.services[profile.service] = []
+    }
+    serviceData.services[profile.service].push(_.pick(profile, whitelist))
   })
 
   return {
@@ -76,7 +79,7 @@ var app = {
         access_token: access_token
     }}).data
 
-    return (data) ? data: {}
+    return (data) ? data: []
   }
 }
 

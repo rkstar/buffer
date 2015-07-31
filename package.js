@@ -1,5 +1,6 @@
 Package.describe({
   name: 'rkstar:buffer',
+  //version: '1.1.0',
   version: '1.0.2',
   // Brief, one-line summary of the package.
   summary: 'An OAuth2 wrapper for the Buffer API',
