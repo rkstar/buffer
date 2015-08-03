@@ -1,3 +1,3 @@
-if( typeof Buffer === 'undefined' ){
-  Buffer = {}
+if( typeof BufferService === 'undefined' ){
+  BufferService = {}
 }

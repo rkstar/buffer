@@ -1,6 +1,6 @@
 Package.describe({
   name: 'rkstar:buffer',
-  version: '1.0.2',
+  version: '1.1.0',
   // Brief, one-line summary of the package.
   summary: 'An OAuth2 wrapper for the Buffer API',
   // URL to the Git repository containing the source code for this package.
@@ -20,7 +20,7 @@ Package.onUse(function(api) {
   api.use('random', 'client')
   api.use('service-configuration')
 
-  api.export('Buffer')
+  api.export('BufferService')
 
   api.addFiles('buffer-common.js')
   api.addFiles('buffer-client.js', 'client')
