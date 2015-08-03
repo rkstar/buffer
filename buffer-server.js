@@ -83,6 +83,6 @@ var app = {
   }
 }
 
-Buffer.retrieveCredential = function(credentialToken, credentialSecret){
+BufferService.retrieveCredential = function(credentialToken, credentialSecret){
   return OAuth.retrieveCredential(credentialToken, credentialSecret)
 }

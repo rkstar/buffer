@@ -1,5 +1,5 @@
 // request Buffer creds for the user
-Buffer.requestCredential = function(options, credentialRequestCompleteCallback){
+BufferService.requestCredential = function(options, credentialRequestCompleteCallback){
   // support both( options, callback) and (callback)
   if( !credentialRequestCompleteCallback && (typeof options === 'function') ){
     credentialRequestCompleteCallback = options
