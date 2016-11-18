@@ -13,8 +13,6 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2')
 
-  api.use('ecmascript', 'server')
-  api.use('modules')
   api.use('oauth2')
   api.use('oauth')
   api.use('http', 'server')
