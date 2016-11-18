@@ -1,6 +1,6 @@
 Package.describe({
   name: 'rkstar:buffer',
-  version: '1.2.0',
+  version: '1.2.1',
   // Brief, one-line summary of the package.
   summary: 'An OAuth2 wrapper for the Buffer API',
   // URL to the Git repository containing the source code for this package.
@@ -13,6 +13,8 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2')
 
+  api.use('ecmascript', 'server')
+  api.use('modules')
   api.use('oauth2')
   api.use('oauth')
   api.use('http', 'server')
