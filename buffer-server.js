@@ -17,7 +17,7 @@ OAuth.registerService('buffer', 2, null, function(query){
       'service_id',
       'service_username',
       'formatted_username',
-      'default',
+      'default'
     ]
 
   profiles.map(function(profile){
